@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
-const Container = style.div`
+const Container = styled.div`
 h1 {
-  background: red;
+  background-color: ${( { theme } ) => theme.COLORS.PINK};
 }
 `
+
+export default Container
