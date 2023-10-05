@@ -1,5 +1,5 @@
 export default function Details() {
   return (
-    <h1>Teste</h1>
+    <h1>123</h1>
   )
 }

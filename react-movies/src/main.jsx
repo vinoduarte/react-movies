@@ -9,23 +9,19 @@ import GlobalStyles from './styles/global.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-   <React.StrictMode>
+  <React.StrictMode>
+     <ThemeProvider theme={ theme }>
 
-      <ThemeProvider theme={ theme }>
 
-        <GlobalStyles>
 
          <Container>
+          <GlobalStyles></GlobalStyles>
            <Details />
-           <h1>
-            TESTE
-           </h1>
          </Container>
 
-        </GlobalStyles>
+
 
       </ThemeProvider>
-
    </React.StrictMode>
 
 )
