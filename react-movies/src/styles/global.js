@@ -13,5 +13,25 @@ body {
   
   color: ${ ( { theme } ) => theme.COLORS.PINK};
   
+  -webkit-font-smoothing: antialiased;
   }
+
+a {
+  text-decoration: none;
+}
+
+button, a {
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button:hover, a:hover {
+  filter: brightness(0.9)
+}
+
+body, input, button, textarea {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  outline: none;
+}
 `
