@@ -1,5 +1,12 @@
+import { Buttons } from '../components/button'
+import Container from './style.js'
+
+
 export default function Details() {
   return (
-    <h1>123</h1>
+    <Container>
+     <Buttons title="Cadastro" loading>
+     </Buttons>
+    </Container>
   )
 }

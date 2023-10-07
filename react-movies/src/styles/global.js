@@ -9,12 +9,12 @@ export default createGlobalStyle`
 
 body {
 
-  background-color:   ${( { theme } ) => theme.COLORS.PINK};
+  background-color:   ${( { theme } ) => theme.COLORS.BACKGROUND_800};
   
   color: ${ ( { theme } ) => theme.COLORS.PINK};
   
   -webkit-font-smoothing: antialiased;
-  }
+}
 
 a {
   text-decoration: none;
