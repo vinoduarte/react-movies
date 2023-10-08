@@ -8,6 +8,7 @@ height: 48px;
 border: 0;
 padding: 0 16px;
 border-radius: 10px;
+margin-top: 10px;
 
 &:disabled{
   opacity: 0.5;
