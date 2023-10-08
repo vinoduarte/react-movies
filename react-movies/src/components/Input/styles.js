@@ -8,5 +8,4 @@ border: none;
 padding: 19px 24px;
 background-color: ${({ theme } ) => theme.COLORS.BACKGROUND_600};
 color: ${({ theme }) => theme.COLORS.GRAY};
-
 `

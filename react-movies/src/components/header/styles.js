@@ -37,7 +37,9 @@ gap: 64px;
 }
 
 img {
-  height: 64px;
+  display: flex;
+  align-items: center;
+  height: 56px;
   border-radius: 50%;
 }
 `

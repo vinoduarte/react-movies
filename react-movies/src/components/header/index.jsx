@@ -11,7 +11,7 @@ export function Header(placeholder) {
           <h1>Vinicius Duarte</h1>
           <a>sair</a>
         </div>
-        <img src="https://github.com/vinoduarte.png"></img>
+        <a><img src="https://github.com/vinoduarte.png"></img></a>
       </div>
     </Container>
   )
