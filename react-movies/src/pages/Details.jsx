@@ -2,6 +2,7 @@ import { Header } from '../components/header'
 import { Buttons } from '../components/button'
 import Container from './style.js'
 import { Return } from '../components/Return'
+import { Section } from '../components/section'
 
 
 export default function Details() {
@@ -9,6 +10,7 @@ export default function Details() {
     <Container>
      <Header></Header>
      <Return></Return>
+     <Section title="Interestellar"></Section>
     </Container>
   )
 }
