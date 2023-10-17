@@ -5,8 +5,6 @@ export const Container = styled.section`
   color: ${({theme}) => theme.COLORS.WHITE};
   font-weight: 500;
   max-width: 1113px;
-  display: flex;
-  align-items: flex-start;
 
   .title {
     margin-right: 20px;

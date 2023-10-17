@@ -5,6 +5,11 @@ const Container = styled.div`
   grid-template-rows: 116px auto;
   grid-template-areas: "header" "content";
   width: 100%;
+
+  #tags {
+    display: flex;
+    gap: 8px;
+  }
 `
 
 export default Container
