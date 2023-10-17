@@ -41,5 +41,7 @@ img {
   align-items: center;
   height: 56px;
   border-radius: 50%;
+  border: solid 1px;
+  border-color: ${({theme}) => theme.COLORS.BACKGROUND_700}
 }
 `

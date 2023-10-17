@@ -10,7 +10,9 @@ export default function Details() {
     <Container>
      <Header></Header>
      <Return></Return>
-     <Section title="Interestellar"></Section>
+     <Section title="Interestellar">
+      
+      </Section> 
     </Container>
   )
 }
