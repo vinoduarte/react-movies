@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
+grid-area: header;
 
 background-color: ${({theme}) => theme.COLORS.BACKGROUND_800};
 border-bottom-style: solid;
 border-bottom-width: 1px;
 border-bottom-color: ${({theme}) => theme.COLORS.GRAY};
-height: 116px;
 display: flex;
 justify-content: space-between;
 padding: 30px 123px;
@@ -44,4 +44,5 @@ img {
   border: solid 1px;
   border-color: ${({theme}) => theme.COLORS.BACKGROUND_700}
 }
+
 `
