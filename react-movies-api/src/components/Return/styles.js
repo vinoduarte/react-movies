@@ -7,4 +7,6 @@ align-items: center;
 gap: 8px;
 height: 21px;
 margin-bottom: 24px;
+cursor: pointer;
+width: fit-content;
 `

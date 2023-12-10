@@ -1,11 +1,11 @@
 import { Container } from './styles.js'
 import { RiArrowLeftLine } from 'react-icons/ri'
 
-export function Return() {
+export function Return({ title, ...rest }) {
   return(
-    <Container>
+    <Container {...rest}>
       <RiArrowLeftLine />
-      Voltar    
+      { title ? title : "Voltar" }    
     </Container>
   )
 }
