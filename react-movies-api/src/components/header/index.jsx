@@ -1,11 +1,11 @@
 import { Container } from '../header/styles.js'
 import { Input } from '../Input'
 
-export function Header(placeholder) {
+export function Header() {
   return (
     <Container>
       <h1>RocketMovies</h1>
-      <Input placeholder="teste"></Input>
+      <Input placeholder="Pesquisar pelo título"/>
       <div className="Profile">
         <div id="text">
           <h1>Vinicius Duarte</h1>

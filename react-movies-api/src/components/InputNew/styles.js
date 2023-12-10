@@ -2,20 +2,19 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 width: 100%;
-height: 56px;
+height: 274px;
 border-radius: 10px;
 border: none;
 padding: 19px 24px;
 background-color: ${({ theme } ) => theme.COLORS.BACKGROUND_600};
 color: ${({ theme }) => theme.COLORS.GRAY};
-display: flex;
-gap: 5px;
-align-items: center;
+margin-bottom: 40px;
 
-> input {
+> textarea {
   background: transparent;
   border: none;
   width: 100%;
+  height: 233px;
   color: white;
 
 
@@ -24,5 +23,7 @@ align-items: center;
   }
 
 }
-
+> svg {
+  margin-left: 16px;
+}
 `

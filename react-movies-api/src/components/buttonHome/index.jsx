@@ -2,7 +2,7 @@ import { Container } from './styles.js'
 import { IoAdd } from "react-icons/io5";
 
 
-export function Buttons({ title, icon: Icon, loading = false, ...rest }) {
+export function ButtonHome({ title, loading = false, ...rest }) {
   var title
   return (
     <Container 
@@ -10,8 +10,8 @@ export function Buttons({ title, icon: Icon, loading = false, ...rest }) {
      disabled={loading}
     {...rest}
     >
+      <IoAdd id="AddSign"></IoAdd>
       { loading ? 'Carregando...' : title }
-      {Icon && <Icon size={20}/>}
     </Container>
   )
 }
