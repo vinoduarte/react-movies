@@ -32,6 +32,10 @@ export const Container = styled.section`
   border-color: ${({theme}) => theme.COLORS.BACKGROUND_700}
  }
 
+ .star {
+  color: ${({theme}) => theme.COLORS.PINK};
+ }
+
  #creator {
   font-size: 16px;
   display: flex;

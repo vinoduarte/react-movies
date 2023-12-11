@@ -11,13 +11,25 @@ background-color: ${( { theme } ) => theme.COLORS.BACKGROUND_800};
 
 main {
   grid-area: content;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: ${({theme}) => theme.COLORS.PINK};
+  height: 96.197px;
+  border-radius: 8px;
 }
 `
 
 export const Content = styled.div`
 width: 100%;
-height: 100vh;
-padding: 40px 123px;
+height: fit-content;
+padding: 40px 123px 0;
 
 h1 {
   margin-bottom: 40px;

@@ -11,6 +11,7 @@ color: ${({ theme }) => theme.COLORS.GRAY};
 display: flex;
 gap: 5px;
 align-items: center;
+justify-content: center;
 
 > input {
   background: transparent;

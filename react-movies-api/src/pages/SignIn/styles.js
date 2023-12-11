@@ -30,10 +30,9 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  width: 340px;
   display: flex;
   flex-direction: column;
-  margin: 234px 240px 0;
+  padding: 234px clamp(50px, 10%, 240px) 0;
 
   .inputs {
     display: flex;

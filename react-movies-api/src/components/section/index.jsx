@@ -7,7 +7,7 @@ export function Section({ title, children }) {
   return(
     <Container>
       <div id="titleAll">
-      <h2>{title}<div id="stars"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiOutlineStar/></div>
+      <h2>{title}<div id="stars"><AiFillStar className='star'/><AiFillStar className='star'/><AiFillStar className='star'/><AiFillStar className='star'/><AiOutlineStar className='star'/></div>
       </h2>
       <div id="titleCreationData">
         <div id="creator">

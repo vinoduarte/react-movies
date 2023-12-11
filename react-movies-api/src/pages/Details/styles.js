@@ -31,10 +31,19 @@ export const Container = styled.div`
   #tags {
     display: flex;
     gap: 8px;
+    margin: 40px 0 40px 0;
   }
-
+  
   #text {
     font-size: 16px;
+  }
+  
+  .detailsTag {
+    display: flex;
+    height: 14px;
+    padding: 16px;
+    font-size: 12px;
+    align-items: center;
   }
 `
 export const Content = styled.div`
