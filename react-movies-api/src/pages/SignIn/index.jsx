@@ -3,6 +3,7 @@ import { Container, Form, Background } from "./styles";
 import { IoMail } from "react-icons/io5";
 import { IoLockClosed } from "react-icons/io5";
 import { Buttons } from "../../components/button";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
   return (
@@ -24,7 +25,7 @@ export function SignIn() {
           ></Input>
         </div>
         <Buttons className="submitButton" title="Entrar"></Buttons>
-        <a href="#">Criar conta</a>
+        <Link to="/register">Criar conta</Link>
       </Form>
       <Background />
     </Container>

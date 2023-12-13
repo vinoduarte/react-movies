@@ -11,7 +11,7 @@ background-color: ${( { theme } ) => theme.COLORS.BACKGROUND_800};
 
 main {
   grid-area: content;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +29,7 @@ main {
 export const Content = styled.div`
 width: 100%;
 height: fit-content;
-padding: 40px 123px 0;
+padding: 36px 123px;
 
 h1 {
   margin-bottom: 40px;
@@ -60,6 +60,7 @@ h2 {
   gap: 24px;
   border-radius: 8px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .addTagButton {

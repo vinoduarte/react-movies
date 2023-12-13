@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
   width: 100%;
 
   display: grid;
-  grid-template-areas: "header" "content";
+  grid-template-areas: "head" "content";
   grid-template-rows: 144px auto;
 
   header {
-    grid-area: "header";
+    grid-area: "head";
     position: relative;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
 
     .return {
       width: fit-content;

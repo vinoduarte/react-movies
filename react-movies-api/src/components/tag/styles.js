@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.span`
 padding: 8px 16px;
 background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 border-radius: 8px;

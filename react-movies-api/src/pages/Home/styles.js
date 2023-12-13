@@ -1,60 +1,48 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
-width: 100%;
-height: 100vh;
+  width: 100%;
+  height: 100vh;
 
-display: grid;
-grid-template-rows: 116px auto;
-grid-template-areas: 
-"header"
-"content";
+  display: grid;
+  grid-template-rows: 116px auto;
+  grid-template-areas:
+    "header"
+    "content";
 
-background-color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
+  main {
+    grid-area: content;
+    overflow-y: auto;
+  }
 
-main {
-  grid-area: content;
-  overflow-y: scroll;
-}
+  ::-webkit-scrollbar {
+    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    width: 8px;
+  }
 
-
-::-webkit-scrollbar {
-  color: ${({theme}) => theme.COLORS.BACKGROUND_800};
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: ${({theme}) => theme.COLORS.PINK};
-  height: 96.197px;
-  border-radius: 8px;
-}
-`
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK};
+    height: 96.197px;
+    border-radius: 8px;
+  }
+`;
 
 export const Content = styled.div`
-margin: 50px 123px;
+  margin: 50px 123px;
 
+  h1 {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
 
-h1 {
-  color: ${({theme}) => theme.COLORS.WHITE}
-}
+  #moviesHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
 
-#moviesHeader {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 38px;
-}
-
-#HomeButton {
-  width: 207px;
-}
-
-`
-
-export const MovieOption = styled.div`
-width: 100%;
-background-color: ${({theme}) => theme.COLORS.BACKGROUND_500};
-border-radius: 16px;
-padding: 32px;
-margin-bottom: 24px;
-`
+  #HomeButton {
+    width: 207px;
+  }
+`;

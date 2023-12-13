@@ -12,7 +12,7 @@ export function Profile() {
     <Container>
       <header>
         <div class="return">
-          <Return></Return>
+          <Return to="/"></Return>
         </div>
         <div class="imgDiv">
           <img src="https://github.com/vinoduarte.png"></img>

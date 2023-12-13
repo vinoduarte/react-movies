@@ -25,14 +25,22 @@ export const Container = styled.div`
 
   .returnButton {
     margin: 0 auto;
+    color: ${({ theme }) => theme.COLORS.PINK};
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 21px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    width: fit-content;
   }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  height: fit-content;
   padding: 234px clamp(50px, 10%, 240px) 0;
-
 
   .inputs {
     display: flex;
@@ -55,6 +63,4 @@ export const Background = styled.div`
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
   opacity: 30%;
-  overflow-x: scroll;
-
 `;

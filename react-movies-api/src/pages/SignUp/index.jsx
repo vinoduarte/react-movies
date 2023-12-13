@@ -5,7 +5,7 @@ import { IoLockClosed } from "react-icons/io5";
 import { IoMdPerson } from "react-icons/io";
 import { Buttons } from "../../components/button";
 import { RiArrowLeftLine } from "react-icons/ri";
-import { Return } from "../../components/Return";
+import { Link } from "react-router-dom";
 
 export function SignUp() {
   return (
@@ -24,7 +24,10 @@ export function SignUp() {
           ></Input>
         </div>
         <Buttons className="submitButton" title="Entrar"></Buttons>
-        <Return className="returnButton" href="#" title="Voltar para o login"></Return>
+        <Link className="returnButton" to="/">
+          <RiArrowLeftLine />
+          Voltar para o login
+        </Link>
       </Form>
       <Background />
     </Container>
