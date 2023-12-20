@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Buttons } from "../../components/button";
 
 export const Container = styled.div`
   width: 100%;
@@ -45,10 +46,22 @@ export const Container = styled.div`
       position: absolute;
       right: 0;
       bottom: 0;
+      cursor: pointer;
 
       svg {
         width: 50px;
         color: black;
+      }
+
+      input {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        opacity: 0;
+      }
+
+      input:hover {
+        cursor: pointer;
       }
     }
   }

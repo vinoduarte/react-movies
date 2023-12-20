@@ -6,8 +6,45 @@ import { IoMail } from "react-icons/io5";
 import { IoLockClosed } from "react-icons/io5";
 import { Input } from "../../components/Input";
 import { Buttons } from "../../components/button";
+import { useState } from "react";
+import { useAuth } from "../../hooks/auth";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+import { api } from "../../services/api";
 
 export function Profile() {
+  const { user, updateProfile } = useAuth();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [passwordOld, setPasswordOld] = useState();
+  const [passwordNew, setPasswordNew] = useState();
+
+  const [avatar, setAvatar] = useState(avatarUrl);
+  const [avatarFile, setAvatarFile] = useState(null);
+
+
+
+  async function handleUpdate() {
+    const user = {
+      name,
+      email,
+      password: passwordNew,
+      old_password: passwordOld
+    }
+
+    await updateProfile({ user, avatarFile })
+  }
+
+  function handleChangeAvatar(event) {
+    const file = event.target.files[0]
+    setAvatarFile(file)
+
+    const imagePreview = URL.createObjectURL(file)
+    setAvatar(imagePreview)
+  }
+
   return (
     <Container>
       <header>
@@ -15,29 +52,34 @@ export function Profile() {
           <Return to="/"></Return>
         </div>
         <div class="imgDiv">
-          <img src="https://github.com/vinoduarte.png"></img>
-          <Buttons icon={IoCamera} className="camera"></Buttons>
+          <img src={avatar}></img>
+          <div className="camera">
+            <IoCamera></IoCamera>
+            <input type="file" onChange={handleChangeAvatar}></input>
+          </div>
         </div>
       </header>
       <main>
         <Content>
           <div class="profileInfos">
             <div class="secondInput">
-              <Input icon={IoMdPerson} placeholder="Nome"></Input>
-              <Input icon={IoMail} type="email" placeholder="Email"></Input>
+              <Input icon={IoMdPerson} placeholder="Nome" value={name} onChange={e => setName(e.target.value)}></Input>
+              <Input icon={IoMail} type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}></Input>
             </div>
             <Input
               icon={IoLockClosed}
               type="password"
               placeholder="Senha atual"
+              onChange={e => setPasswordOld(e.target.value)}
             ></Input>
             <Input
               icon={IoLockClosed}
               type="password"
               placeholder="Nova senha"
+              onChange={e => setPasswordNew(e.target.value)}
             ></Input>
           </div>
-          <Buttons title="Salvar"></Buttons>
+          <Buttons title="Salvar" onClick={handleUpdate}></Buttons>
         </Content>
       </main>
     </Container>

@@ -44,5 +44,4 @@ img {
   border: solid 1px;
   border-color: ${({theme}) => theme.COLORS.BACKGROUND_700}
 }
-
 `
