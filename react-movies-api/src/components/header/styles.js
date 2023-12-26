@@ -16,6 +16,7 @@ gap: 64px;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 #text a {

@@ -70,10 +70,19 @@ h2 {
   font-size: 16px;
   height: 56px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 5px;
+  border-radius: 8px;
+  padding: 16px;
   width: fit-content;
+  align-items: center;
+
+  input {
+    width: fit-content;
+    background: none;
+    border: none;
+    width: 120px;
+    color: ${( { theme } ) => theme.COLORS.GRAY};
+  }
 
   > svg {
     color: ${( { theme } ) => theme.COLORS.PINK};
@@ -81,7 +90,7 @@ h2 {
 
 }
 
-.addTag {
+.Tag {
   height: 56px;
   display: flex;
   align-items: center;
@@ -97,10 +106,5 @@ h2 {
 #deleteOrSave {
   display: flex;
   gap: 40px;
-
-  .deleteMovie {
-    background-color: ${( { theme } ) => theme.COLORS.BACKGROUND_900};
-    color: ${( { theme } ) => theme.COLORS.PINK}
-  }
 }
 `

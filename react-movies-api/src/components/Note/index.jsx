@@ -8,7 +8,7 @@ export function Note({ data, ...rest }) {
     <Container {...rest}>
       <h1>{data.title}</h1>
       <div className="rating">{data.rating}<AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiOutlineStar/></div>
-      <p>{data.textPreview}</p>
+      <p className="description">{data.textPreview}</p>
       {data.tags && 
         <footer>
           {data.tags.map( tag => <Tag key={tag.id} title={tag.name}/>)}

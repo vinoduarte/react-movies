@@ -1,34 +1,73 @@
-import { Header } from '../../components/header/index.jsx'
-import { Buttons } from '../../components/button/index.jsx'
-import { Container, Content } from './styles.js'
-import { Return } from '../../components/Return/index.jsx'
-import { Section } from '../../components/section/index.jsx'
-import { Tag } from '../../components/tag/index.jsx'
-
+import { Header } from "../../components/header/index.jsx";
+import { Buttons } from "../../components/button/index.jsx";
+import { Container, Content } from "./styles.js";
+import { Return } from "../../components/Return/index.jsx";
+import { Section } from "../../components/section/index.jsx";
+import { Tag } from "../../components/tag/index.jsx";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { api } from "../../services/api.js";
 
 export function Details() {
+  const [data, setData] = useState(null);
+  
+  const params = useParams();
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    async function fetchNote() {
+      const response = await api.get(`/notes/${params.id}`);
+      setData(response.data);
+    }
+
+    fetchNote();
+  });
+
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja realmente remover a nota?")
+
+    if(confirm) {
+      await api.delete(`/notes/${params.id}`)
+      navigate(-1)
+    }
+  }
+
+  function handleBack() {
+    navigate(-1)
+  }
+
   return (
     <Container>
-     <Header/>
-      <main>
-        <Content>
-
-        
-         <Return></Return>
-         <Section title="Interestellar">
-           <div id='tags'>
-             <Tag className="detailsTag" title="Ficção científica"></Tag>
-             <Tag className="detailsTag" title="Drama"></Tag>
-             <Tag className="detailsTag" title="Família"></Tag>
+      <Header />
+      {data && (
+        <main>
+          <Content>
+            <div className="detailsContentHeader">
+              <Return onClick={handleBack}></Return>
+              <Buttons 
+               className="deleteNote" 
+               title="Excluir nota"
+               onClick={handleRemove}></Buttons>
             </div>
-           <div id="text">
-             Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As "missões Lázaro" enviadas anos antes identificaram três planetas potencialmente habitáveis orbitando o buraco negro Gargântua: Miller, Edmunds e Mann – nomeados em homenagem aos astronautas que os pesquisaram. Brand recruta Cooper para pilotar a nave espacial Endurance e recuperar os dados dos astronautas; se um dos planetas se mostrar habitável, a humanidade irá seguir para ele na instalação da NASA, que é na realidade uma enorme estação espacial. A partida de Cooper devasta Murphy.
-
-             Além de Cooper, a tripulação da Endurance é formada pela bióloga Amelia, filha de Brand; o cientista Romilly, o físico planetário Doyle, além dos robôs TARS e CASE. Eles entram no buraco de minhoca e se dirigem a Miller, porém descobrem que o planeta possui enorme dilatação gravitacional temporal por estar tão perto de Gargântua: cada hora na superfície equivale a sete anos na Terra. Eles entram em Miller e descobrem que é inóspito já que é coberto por um oceano raso e agitado por ondas enormes. Uma onda atinge a tripulação enquanto Amelia tenta recuperar os dados de Miller, matando Doyle e atrasando a partida. Ao voltarem para a Endurance, Cooper e Amelia descobrem que 23 anos se passaram.
-           </div>
-          </Section>
-        </Content>
-      </main> 
+            <Section title={data.title}>
+              {data.tags && (
+                <div id="tags">
+                  {data.tags.map((tag) => (
+                    <Tag
+                      className="detailsTag"
+                      key={String(tag.id)}
+                      title={tag.name}
+                    ></Tag>
+                  ))}
+                </div>
+              )}
+              <div id="text">
+                <p>{data.description}</p>
+              </div>
+            </Section>
+          </Content>
+        </main>
+      )}
     </Container>
-  )
+  );
 }

@@ -33,6 +33,10 @@ export function SignUp() {
         }
       })
     }
+
+    function handleBack() {
+      navigate(-1)
+    }
   
 
   return (
@@ -61,7 +65,7 @@ export function SignUp() {
           />
         </div>
         <Buttons className="submitButton" title="Entrar" onClick={handleSignUp}></Buttons>
-        <Link className="returnButton" to="/">
+        <Link className="returnButton" onClick={handleBack}>
           <RiArrowLeftLine />
           Voltar para o login
         </Link>

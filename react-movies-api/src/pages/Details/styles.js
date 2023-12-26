@@ -34,8 +34,10 @@ export const Container = styled.div`
     margin: 40px 0 40px 0;
   }
   
-  #text {
+  p {
     font-size: 16px;
+    height: 500px;
+    overflow: hidden;
   }
   
   .detailsTag {
@@ -48,7 +50,25 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
 max-width: 1113px;
+width: fit-content;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
+justify-content: left;
+
+.detailsContentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .deleteNote {
+    width: 150px;
+    background: none;
+    color: ${({theme}) => theme.COLORS.PINK};
+    padding: 0;
+    width: fit-content;
+  }
+}
+
+
 `

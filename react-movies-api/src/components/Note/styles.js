@@ -26,7 +26,7 @@ footer {
   margin-top: 15px;
 }
 
-p {
+.description {
   margin-top: 15px;
   overflow: hidden;
   text-overflow: 'ellipsis';
@@ -37,6 +37,7 @@ p {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   text-align: left;
+  height: 50px;
 }
 
 .rating {
