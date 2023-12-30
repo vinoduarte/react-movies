@@ -1,7 +1,7 @@
-import { Container } from '../header/styles.js'
-import { Input } from '../Input'
+import { Container } from './styles.js'
+import { Input } from '../Input/index.jsx'
 import { Link } from 'react-router-dom'
-import { useAuth } from "../../hooks/auth"
+import { useAuth } from "../../hooks/auth.jsx"
 import { api } from '../../services/api.js'
 import { useEffect, useState } from 'react'
 

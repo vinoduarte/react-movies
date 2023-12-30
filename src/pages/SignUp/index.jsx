@@ -1,9 +1,9 @@
-import { Input } from "../../components/Input";
-import { Container, Form, Background } from "./styles";
+import { Input } from "../../components/Input/index.jsx";
+import { Container, Form, Background } from "./styles.js";
 import { IoMail } from "react-icons/io5";
 import { IoLockClosed } from "react-icons/io5";
 import { IoMdPerson } from "react-icons/io";
-import { Buttons } from "../../components/button";
+import { Buttons } from "../../components/button/index.jsx";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useState, userState } from "react";
